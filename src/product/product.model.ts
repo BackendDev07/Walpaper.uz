@@ -13,19 +13,8 @@ const updateProduct = Joi.object({
   description: Joi.string(),
 })
 
-const createDetail = Joi.object({
-  key: Joi.string().required(),
-  value: Joi.string().required(),
-})
-
-const updateDetail = Joi.object({
-  key: Joi.string(),
-  value: Joi.string(),
-})
 
 export default {
-  createDetail,
   createProduct,
-  updateDetail,
   updateProduct,
 }

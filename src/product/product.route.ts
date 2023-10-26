@@ -36,25 +36,5 @@ router.delete(
   productController.deleteImage
 )
 
-router.post(
-  '/:id/detail',
-  userVerify(['admin']),
-  bodyValidate(productModel.createDetail),
-  productController.createDetail
-)
-router.put(
-  '/detail/:id',
-  userVerify(['admin']),
-  bodyValidate(productModel.updateDetail),
-
-  productController.updateDetail
-)
-router.delete(
-  '/detail/:id',
-  userVerify(['admin']),
-  productController.deleteDetail
-)
-
-router.post('/:id/review', userVerify(['user']), productController.createReview)
 
 export default router

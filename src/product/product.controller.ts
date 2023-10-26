@@ -127,67 +127,6 @@ const deleteImage = async (req: Request, res: Response, next: NextFunction) => {
   }
 }
 
-const createDetail: ControllerType = async (req, res, next) => {
-  try {
-    const { id } = req.params
-    const { key, value } = req.body
-
-    const detail = await productService.createDetail(+id, key, value)
-
-    res.status(201).send({
-      message: 'Detail Created',
-      detail,
-    })
-  } catch (e) {
-    next(e)
-  }
-}
-const updateDetail: ControllerType = async (req, res, next) => {
-  try {
-    const { id } = req.params
-    const { key, value } = req.body
-
-    const detail = await productService.updateDetail(+id, key, value)
-
-    res.send({
-      message: 'Detail Updated',
-      detail,
-    })
-  } catch (e) {
-    next(e)
-  }
-}
-
-const deleteDetail: ControllerType = async (req, res, next) => {
-  try {
-    const { id } = req.params
-
-    const detail = await productService.deleteDetail(+id)
-    res.send({
-      message: 'Detail Deleted',
-      detail,
-    })
-  } catch (e) {
-    next(e)
-  }
-}
-
-const createReview: ControllerType = async (req, res, next) => {
-  try {
-    const { comment } = req.body
-    const { id } = req.params
-    const userId = res.locals.user.id
-
-    const review = await productService.createReview(comment, userId, +id)
-
-    res.status(201).send({
-      message: 'Review Created',
-      review,
-    })
-  } catch (e) {
-    next(e)
-  }
-}
 
 export default {
   createProduct,
@@ -196,8 +135,4 @@ export default {
   getProductById,
   deleteImage,
   createImage,
-  createDetail,
-  updateDetail,
-  deleteDetail,
-  createReview,
 }
