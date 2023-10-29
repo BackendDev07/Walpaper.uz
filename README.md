@@ -1,7 +1,7 @@
 # Walpaper.uz
 # Create folder ".env" and enter this code {
     PORT=3000 
-    DATABASE_URL="postgresql://postgres:7090@localhost:5432/victus?scheme=public" 
+    DATABASE_URL="postgresql://postgres:7090@localhost:5432/warn?scheme=public" 
     JWT_SECRET="SECRET_KEY" 
     EMAIL="shopshoptoli@gmail.com" 
     EMAIL_PASSWORD="symhwqomcwlzbcva" 
