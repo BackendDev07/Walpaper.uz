@@ -9,7 +9,7 @@ const addProductToCart: ControllerType = async (req, res, next) => {
     const cart = await cartService.addProductToCard(+productId, +id)
 
     res.send({
-      message: 'Added Product to Cart',
+      message: 'Product added to Cart',
       cartItem: cart,
     })
   } catch (e) {
@@ -28,7 +28,7 @@ const removeProductFromCart: ControllerType = async (req, res, next) => {
     )
 
     res.send({
-      message: 'Removed Product from Cart',
+      message: 'Product removed from Cart',
       cartItem: removedProduct,
     })
   } catch (e) {
