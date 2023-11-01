@@ -17,7 +17,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            # cd /apps/Walpaper.uz/
+            # cd /apps/Walpaper.uz
             git pull
             npm install
             npx prisma db push
