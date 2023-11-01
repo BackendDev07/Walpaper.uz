@@ -1,0 +1,25 @@
+name: Dev CD
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Connect VPS and deploy changes
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            # cd /apps/Walpaper.uz/
+            git pull
+            npm install
+            npx prisma db push
+            npm run build
+            pm2 restart 0
